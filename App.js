@@ -25,8 +25,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import auth from '@react-native-firebase/auth';
+import { Provider } from 'react-redux'
+import configureStore from './store';
 
-const App: () => React$Node = () => {
+const store = configureStore()
+
+const App = () => {
   const [signinUser, setSigninUser] = React.useState(null);
 
   const onAuthStateChanged = user => {
@@ -69,7 +73,7 @@ const App: () => React$Node = () => {
   }
 
   return (
-    <>
+    <Provider store={store}>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -115,7 +119,7 @@ const App: () => React$Node = () => {
           </View>
         </ScrollView>
       </SafeAreaView>
-    </>
+    </Provider>
   );
 };
 
