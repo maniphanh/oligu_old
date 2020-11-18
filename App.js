@@ -14,7 +14,6 @@ import {
   View,
   Text,
   StatusBar,
-  Button,
 } from 'react-native';
 
 import {
@@ -24,53 +23,24 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import auth from '@react-native-firebase/auth';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import configureStore from './store';
+import LoginPage from './pages/Login.js';
+import auth from '@react-native-firebase/auth';
 
-const store = configureStore()
+const store = configureStore();
 
 const App = () => {
-  const [signinUser, setSigninUser] = React.useState(null);
+  const [signInUser, setSignInUser] = React.useState(null);
 
-  const onAuthStateChanged = user => {
-    setSigninUser(user);
-  }
+  const onAuthStateChanged = (user) => {
+    setSignInUser(user);
+  };
 
   React.useEffect(() => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber; // unsubscribe on unmount
   }, []);
-
-
-
-  const SignInView = () => {
-    if (signinUser) {
-      return <Text>Hello user! {signinUser.email}</Text>;
-    }
-    return <Text>No sign in.</Text>;
-  }
-
-  const signIn = () => {
-    auth()
-      .signInWithEmailAndPassword('nu.maniphanh@gmail.com', 'password');
-  }
-  const signOut = () => auth().signOut()
-  const AuthView = () => {
-    if (signinUser) {
-      return <Button
-        onPress={signOut}
-        title="Sign out"
-        color="#841584"
-      />
-    }
-
-    return <Button
-      onPress={signIn}
-      title="Sign in"
-      color="#841584"
-    />
-  }
 
   return (
     <Provider store={store}>
@@ -87,8 +57,7 @@ const App = () => {
           )}
           <View style={styles.body}>
             <View>
-              <AuthView />
-              <SignInView />
+              <LoginPage signInUser={signInUser} />
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>Step One</Text>
