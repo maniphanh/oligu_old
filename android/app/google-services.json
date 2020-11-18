@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "723388732693",
+    "firebase_url": "https://oligu-188cb.firebaseio.com",
+    "project_id": "oligu-188cb",
+    "storage_bucket": "oligu-188cb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:723388732693:android:350cc7e5247c5587ce451c",
+        "android_client_info": {
+          "package_name": "com.oligu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "723388732693-ghd2pm0u74iobmm9epatnm8k50nrq3s7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.oligu",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "723388732693-on9fplvelru05tj3p0pa40lob7bcvlri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqu1aukTIw-dnGPmBpyfv3iuvQhZx3jRk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "723388732693-on9fplvelru05tj3p0pa40lob7bcvlri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

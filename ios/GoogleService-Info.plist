@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>723388732693-d2n83ujpqd0t16j0f3dk8eof5a3tl4r3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.723388732693-d2n83ujpqd0t16j0f3dk8eof5a3tl4r3</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>723388732693-ghd2pm0u74iobmm9epatnm8k50nrq3s7.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB37rNjlSFpaTqjzMJUAnAVrBcS8--rrLE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>723388732693</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.Oligu</string>
+	<key>PROJECT_ID</key>
+	<string>oligu-188cb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>oligu-188cb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:723388732693:ios:d923cd66bd25157dce451c</string>
+	<key>DATABASE_URL</key>
+	<string>https://oligu-188cb.firebaseio.com</string>
+</dict>
+</plist>
