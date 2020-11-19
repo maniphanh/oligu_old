@@ -1,23 +1,25 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
+import {combineReducers, createStore, applyMiddleware} from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
-const configureStore = preloadState => {
-    // Root reducer
-    const userReducer = (state = null, action) => ({ user: null })
-    const rootReducer = combineReducers({ userReducer })
+// reducers
+import {loginReducer} from './pages/clients/login/reducer';
 
-    // For middlewares
-    const middlewares = [thunkMiddleware]
-    const middlewareEnhancer = applyMiddleware(...middlewares)
+const configureStore = (preloadState) => {
+  // Root reducer
+  const rootReducer = combineReducers({login: loginReducer});
 
-    // For enhancers
-    const enhancers = [middlewareEnhancer]
+  // For middleware
+  const middleware = [thunkMiddleware];
+  const middlewareEnhancer = applyMiddleware(...middleware);
 
-    // Add dev tool
-    const composedEnhancers = composeWithDevTools(...enhancers)
+  // For enhancers
+  const enhancers = [middlewareEnhancer];
 
-    return createStore(rootReducer, preloadState, composedEnhancers)
-}
+  // Add dev tool
+  const composedEnhancers = composeWithDevTools(...enhancers);
 
-export default configureStore
+  return createStore(rootReducer, preloadState, composedEnhancers);
+};
+
+export default configureStore;

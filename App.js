@@ -23,9 +23,9 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import configureStore from './store';
-import LoginPage from './pages/Login.js';
+import LoginPage from './pages/clients/login/loginPage';
 import auth from '@react-native-firebase/auth';
 
 const store = configureStore();
@@ -33,6 +33,7 @@ const store = configureStore();
 const App = () => {
   const [signInUser, setSignInUser] = React.useState(null);
 
+  // remove this and use redux instead
   const onAuthStateChanged = (user) => {
     setSignInUser(user);
   };
