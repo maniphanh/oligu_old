@@ -10,16 +10,23 @@ import React from 'react';
 import {View, Text, Button} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Provider} from 'react-redux';
+import {Provider as PaperProvider} from 'react-native-paper';
+import {Provider as StoreProvider} from 'react-redux';
 import configureStore from './store';
 import LoginPage from './pages/clients/login/loginPage';
+import {useSelector} from 'react-redux';
 
 const store = configureStore();
 
-function HomeScreen({navigation}) {
+const style = {flex: 1, alignItems: 'center', justifyContent: 'center'};
+
+const HomeScreen = ({navigation}) => {
+  const status = useSelector((state) => state.login.status);
+
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={style}>
       <Text>Home Screen</Text>
+      <Text>{status}</Text>
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Details')}
@@ -27,11 +34,11 @@ function HomeScreen({navigation}) {
       <LoginPage />
     </View>
   );
-}
+};
 
 function DetailsScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={style}>
       <Text>Details Screen</Text>
     </View>
   );
@@ -41,14 +48,16 @@ const Stack = createStackNavigator();
 
 function App() {
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Details" component={DetailsScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </Provider>
+    <StoreProvider store={store}>
+      <PaperProvider>
+        <NavigationContainer>
+          <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Details" component={DetailsScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </StoreProvider>
   );
 }
 

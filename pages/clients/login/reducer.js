@@ -1,6 +1,6 @@
 import {LOGIN_SUCCESS, LOGIN_FAILED, LOG_OFF} from './actionTypes';
 
-export const loginReducer = (state = {}, action) => {
+export const loginReducer = (state = {user: null, status: LOG_OFF}, action) => {
   switch (action.type) {
     case LOGIN_SUCCESS:
       return {user: action.user, status: action.type};
